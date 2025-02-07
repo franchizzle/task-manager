@@ -6,7 +6,7 @@ import './jank-mode'
 
 if (!isDevelopmentMode) {
     Sentry.init({
-        dsn: 'https://9181589921b12cd7b59f760de07f8abb@o4508777211494400.ingest.us.sentry.io/4508777218179073',
+        dsn: "https://9181589921b12cd7b59f760de07f8abb@o4508777211494400.ingest.us.sentry.io/4508777218179073",
         environment: process.env.NODE_ENV,
 
         // This sets the sample rate to be 10%. You may want this to be 100% while
