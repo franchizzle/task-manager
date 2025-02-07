@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/GeneralTask/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/config"
 	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog/log"
 	"go.mongodb.org/mongo-driver/bson"

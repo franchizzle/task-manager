@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/GeneralTask/task-manager/backend/config"
-	_ "github.com/GeneralTask/task-manager/backend/docs"
+	"github.com/franchizzle/task-manager/backend/config"
+	_ "github.com/franchizzle/task-manager/backend/docs"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"

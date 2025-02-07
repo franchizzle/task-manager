@@ -3,7 +3,7 @@ package migrations
 import (
 	"fmt"
 
-	"github.com/GeneralTask/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/config"
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/mongodb"
 	_ "github.com/golang-migrate/migrate/v4/source/file"

@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/GeneralTask/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/config"
 )
 
 type Message struct {

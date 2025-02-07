@@ -3,14 +3,14 @@ package api
 import (
 	"bytes"
 	"context"
-	"github.com/GeneralTask/task-manager/backend/constants"
+	"github.com/franchizzle/task-manager/backend/constants"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
-	"github.com/GeneralTask/task-manager/backend/database"
-	"github.com/GeneralTask/task-manager/backend/settings"
+	"github.com/franchizzle/task-manager/backend/database"
+	"github.com/franchizzle/task-manager/backend/settings"
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

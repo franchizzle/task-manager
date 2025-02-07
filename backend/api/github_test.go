@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/GeneralTask/task-manager/backend/config"
-	"github.com/GeneralTask/task-manager/backend/external"
-	"github.com/GeneralTask/task-manager/backend/testutils"
+	"github.com/franchizzle/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/external"
+	"github.com/franchizzle/task-manager/backend/testutils"
 )
 
 const DefaultTokenPayload string = `{"access_token":"sample-access-token", "data": {"email": "moon@dogecoin.tesla"}}`

@@ -1,6 +1,6 @@
 package external
 
-import "github.com/GeneralTask/task-manager/backend/database"
+import "github.com/franchizzle/task-manager/backend/database"
 
 type CalendarResult struct {
 	CalendarEvents []*database.CalendarEvent

@@ -5,7 +5,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/GeneralTask/task-manager/backend/database"
+	"github.com/franchizzle/task-manager/backend/database"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

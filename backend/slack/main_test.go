@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/GeneralTask/task-manager/backend/testutils"
+	"github.com/franchizzle/task-manager/backend/testutils"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/GeneralTask/task-manager/backend/logging"
+	"github.com/franchizzle/task-manager/backend/logging"
 )
 
 type EmptyResponse struct{}

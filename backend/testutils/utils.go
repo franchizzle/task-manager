@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/GeneralTask/task-manager/backend/constants"
+	"github.com/franchizzle/task-manager/backend/constants"
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

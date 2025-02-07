@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/GeneralTask/task-manager/backend/utils"
+	"github.com/franchizzle/task-manager/backend/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -41,7 +41,7 @@ func (api *API) MeetingBanner(c *gin.Context) {
 			{
 				Logo:  "github",
 				Title: "Review PR: Email reply v0",
-				Link:  "https://github.com/GeneralTask/task-manager/pull/1027",
+				Link:  "https://github.com/franchizzle/task-manager/pull/1027",
 			},
 			{
 				Logo:  "gmail",

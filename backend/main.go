@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/GeneralTask/task-manager/backend/api"
-	"github.com/GeneralTask/task-manager/backend/config"
-	"github.com/GeneralTask/task-manager/backend/jobs"
-	"github.com/GeneralTask/task-manager/backend/logging"
-	"github.com/GeneralTask/task-manager/backend/migrations"
-	"github.com/GeneralTask/task-manager/backend/utils"
+	"github.com/franchizzle/task-manager/backend/api"
+	"github.com/franchizzle/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/jobs"
+	"github.com/franchizzle/task-manager/backend/logging"
+	"github.com/franchizzle/task-manager/backend/migrations"
+	"github.com/franchizzle/task-manager/backend/utils"
 	"github.com/rs/zerolog/log"
 )
 

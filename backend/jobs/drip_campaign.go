@@ -1,8 +1,8 @@
 package jobs
 
 import (
-	"github.com/GeneralTask/task-manager/backend/logging"
-	"github.com/GeneralTask/task-manager/backend/utils"
+	"github.com/franchizzle/task-manager/backend/logging"
+	"github.com/franchizzle/task-manager/backend/utils"
 )
 
 func dripCampaignJob() {

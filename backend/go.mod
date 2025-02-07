@@ -1,4 +1,4 @@
-module github.com/GeneralTask/task-manager/backend
+module github.com/franchizzle/task-manager/backend
 
 go 1.18
 

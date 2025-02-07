@@ -3,10 +3,10 @@ package api
 import (
 	"context"
 	"errors"
-	"github.com/GeneralTask/task-manager/backend/constants"
+	"github.com/franchizzle/task-manager/backend/constants"
 	"time"
 
-	"github.com/GeneralTask/task-manager/backend/database"
+	"github.com/franchizzle/task-manager/backend/database"
 
 	"github.com/rs/zerolog/log"
 
