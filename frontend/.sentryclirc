@@ -1,6 +1,6 @@
 [defaults]
 url = https://sentry.io/
-org = general-task
+org = goodest-boy
 project = frontend
 
 [auth]
