@@ -15,11 +15,11 @@ func TestGetValidExternalOwnerAssignedTask(t *testing.T) {
 
 	userCollection := database.GetUserCollection(api.DB)
 	julianUser, err := userCollection.InsertOne(context.Background(), database.User{
-		Email: "julian@generaltask.com",
+		Email: "julian@resonant-kelpie-404a42.netlify.app",
 	})
 	assert.NoError(t, err)
 	johnUser, err := userCollection.InsertOne(context.Background(), database.User{
-		Email: "john@generaltask.com",
+		Email: "john@resonant-kelpie-404a42.netlify.app",
 	})
 	assert.NoError(t, err)
 
@@ -41,7 +41,7 @@ func TestGetValidExternalOwnerAssignedTask(t *testing.T) {
 	t.Run("Success", func(t *testing.T) {
 		user, title, err := getValidExternalOwnerAssignedTask(api.DB, julianUser.InsertedID.(primitive.ObjectID), "<to john>Hello there!")
 		assert.NoError(t, err)
-		assert.Equal(t, "Hello there! from: julian@generaltask.com", title)
+		assert.Equal(t, "Hello there! from: julian@resonant-kelpie-404a42.netlify.app", title)
 		assert.Equal(t, johnUser.InsertedID.(primitive.ObjectID), user.ID)
 	})
 }

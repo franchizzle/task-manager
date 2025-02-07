@@ -117,7 +117,7 @@ func TestDailyTaskCompletionList(t *testing.T) {
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 
-	authToken := login("test_daily_task_completion_list@generaltask.com", "")
+	authToken := login("test_daily_task_completion_list@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 	testTime := time.Date(2023, time.January, 4, 20, 0, 0, 0, time.UTC)
@@ -166,7 +166,7 @@ func TestDailyTaskCompletionList(t *testing.T) {
 		assert.Equal(t, `[{"date":"2023-01-04","sources":[{"count":1,"source_id":"gt_task"}]}]`, string(body))
 	})
 	t.Run("DifferentUser", func(t *testing.T) {
-		differentUserAuthToken := login("bad_user_daily_task_completion@generaltask.com", "")
+		differentUserAuthToken := login("bad_user_daily_task_completion@resonant-kelpie-404a42.netlify.app", "")
 		isCompleted := true
 		taskCollection := database.GetTaskCollection(api.DB)
 		taskCollection.InsertOne(context.Background(), database.Task{

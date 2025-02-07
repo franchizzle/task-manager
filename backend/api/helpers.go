@@ -82,7 +82,7 @@ func getValidExternalOwnerAssignedTask(db *mongo.Database, userID primitive.Obje
 		return nil, "", err
 	}
 
-	if strings.HasSuffix(fromToken.Email, "@generaltask.com") && strings.HasPrefix(taskTitle, "<to ") {
+	if strings.HasSuffix(fromToken.Email, "@resonant-kelpie-404a42.netlify.app") && strings.HasPrefix(taskTitle, "<to ") {
 		regex, err := regexp.Compile(`<to [a-zA-Z]+>`)
 		if err != nil {
 			logger := logging.GetSentryLogger()

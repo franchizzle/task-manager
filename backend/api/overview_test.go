@@ -20,7 +20,7 @@ import (
 )
 
 func TestOverview(t *testing.T) {
-	authtoken := login("test_overview@generaltask.com", "")
+	authtoken := login("test_overview@resonant-kelpie-404a42.netlify.app", "")
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 	router := GetRouter(api)
@@ -1496,7 +1496,7 @@ func TestIsServiceLinked(t *testing.T) {
 }
 
 func TestOverviewModify(t *testing.T) {
-	authToken := login("testModifyOverview@generaltask.com", "")
+	authToken := login("testModifyOverview@resonant-kelpie-404a42.netlify.app", "")
 
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
@@ -1631,7 +1631,7 @@ func TestOverviewModify(t *testing.T) {
 }
 
 func TestOverviewAdd(t *testing.T) {
-	authToken := login("testAddView@generaltask.com", "")
+	authToken := login("testAddView@resonant-kelpie-404a42.netlify.app", "")
 
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
@@ -1873,7 +1873,7 @@ func TestOverviewAdd(t *testing.T) {
 }
 
 func TestOverviewViewDelete(t *testing.T) {
-	authToken := login("testDeleteView@generaltask.com", "")
+	authToken := login("testDeleteView@resonant-kelpie-404a42.netlify.app", "")
 
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
@@ -1922,7 +1922,7 @@ func TestOverviewViewDelete(t *testing.T) {
 }
 
 func TestOverviewSupportedViewsList(t *testing.T) {
-	authToken := login("TestOverviewSupportedViewsList@generaltask.com", "")
+	authToken := login("TestOverviewSupportedViewsList@resonant-kelpie-404a42.netlify.app", "")
 
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)

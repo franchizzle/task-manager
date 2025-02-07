@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/GeneralTask/task-manager/backend/config"
-	"github.com/GeneralTask/task-manager/backend/constants"
+	"github.com/franchizzle/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/constants"
 )
 
 func ExtractSenderName(sendLine string) (string, string) {
@@ -48,7 +48,7 @@ func IsEmailValid(e string) bool {
 const MANDRILL_SEND_URL = "https://mandrillapp.com/api/1.0/messages/send"
 
 func TestMailchimpEmail() error {
-	testMessage := `{"key": "` + config.GetConfigValue("MANDRILL_CLIENT_SECRET") + `", "message": {"from_email": "julian@generaltask.com", "subject": "General Task Test", "text": "Testing emails from General Task!", "to": [{ "email": "julian@generaltask.com", "type": "to" }]}}`
+	testMessage := `{"key": "` + config.GetConfigValue("MANDRILL_CLIENT_SECRET") + `", "message": {"from_email": "julian@resonant-kelpie-404a42.netlify.app", "subject": "General Task Test", "text": "Testing emails from General Task!", "to": [{ "email": "julian@resonant-kelpie-404a42.netlify.app", "type": "to" }]}}`
 	req, _ := http.NewRequest("POST", MANDRILL_SEND_URL, bytes.NewBuffer([]byte(testMessage)))
 	req.Header.Add("Content-Type", "application/json")
 	resp, err := http.DefaultClient.Do(req)

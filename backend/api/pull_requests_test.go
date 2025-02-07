@@ -19,7 +19,7 @@ import (
 )
 
 func TestPullRequestList(t *testing.T) {
-	authToken := login("test_pull_request_list@generaltask.com", "")
+	authToken := login("test_pull_request_list@resonant-kelpie-404a42.netlify.app", "")
 
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)

@@ -10,7 +10,7 @@ import (
 )
 
 const LinearTokenPayload string = `{"access_token":"sample-linear-access-token"}`
-const LinearUserInfoPayload string = `{"data": {"viewer": { "id": "sample-linear-id", "name": "Test User", "email": "test@generaltask.com"}}}`
+const LinearUserInfoPayload string = `{"data": {"viewer": { "id": "sample-linear-id", "name": "Test User", "email": "test@resonant-kelpie-404a42.netlify.app"}}}`
 
 func TestLinkLinear(t *testing.T) {
 	api, cleanup := GetAPIWithDBCleanup()

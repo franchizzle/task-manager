@@ -51,13 +51,13 @@ func TestOverviewSuggestions(t *testing.T) {
 		currentTime := time.Now().UTC()
 		api.OverrideTime = &currentTime
 
-		authtoken := login("test_overview_suggestion_invalid@generaltask.com", "")
+		authtoken := login("test_overview_suggestion_invalid@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestion/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "0")
 
 		userCollection := database.GetUserCollection(api.DB)
-		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_invalid@generaltask.com"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
+		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_invalid@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
 		assert.NoError(t, err)
 
 		recorder := httptest.NewRecorder()
@@ -65,7 +65,7 @@ func TestOverviewSuggestions(t *testing.T) {
 		assert.Equal(t, http.StatusInternalServerError, recorder.Code)
 
 		var resultUser *database.User
-		err = userCollection.FindOne(context.Background(), bson.M{"email": "test_overview_suggestion_invalid@generaltask.com"}).Decode(&resultUser)
+		err = userCollection.FindOne(context.Background(), bson.M{"email": "test_overview_suggestion_invalid@resonant-kelpie-404a42.netlify.app"}).Decode(&resultUser)
 		assert.NoError(t, err)
 		assert.Equal(t, constants.MAX_OVERVIEW_SUGGESTION-1, resultUser.GPTSuggestionsLeft)
 	})
@@ -76,16 +76,16 @@ func TestOverviewSuggestions(t *testing.T) {
 		currentTime := time.Now().UTC()
 		api.OverrideTime = &currentTime
 
-		authtoken := login("prompt_too_long@generaltask.com", "")
+		authtoken := login("prompt_too_long@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestion/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "0")
 
 		userCollection := database.GetUserCollection(api.DB)
-		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "prompt_too_long@generaltask.com"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
+		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "prompt_too_long@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
 		assert.NoError(t, err)
 
-		result := userCollection.FindOne(context.Background(), bson.M{"email": "prompt_too_long@generaltask.com"}, nil)
+		result := userCollection.FindOne(context.Background(), bson.M{"email": "prompt_too_long@resonant-kelpie-404a42.netlify.app"}, nil)
 		var userObject database.User
 		err = result.Decode(&userObject)
 		assert.NoError(t, err)
@@ -120,13 +120,13 @@ func TestOverviewSuggestions(t *testing.T) {
 		currentTime := time.Now().UTC()
 		api.OverrideTime = &currentTime
 
-		authtoken := login("test_overview_suggestion@generaltask.com", "")
+		authtoken := login("test_overview_suggestion@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestion/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "0")
 
 		userCollection := database.GetUserCollection(api.DB)
-		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion@generaltask.com"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
+		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_suggestions_left": constants.MAX_OVERVIEW_SUGGESTION}})
 		assert.NoError(t, err)
 
 		recorder := httptest.NewRecorder()
@@ -138,7 +138,7 @@ func TestOverviewSuggestions(t *testing.T) {
 		assert.Regexp(t, regex, string(body))
 
 		var resultUser *database.User
-		err = userCollection.FindOne(context.Background(), bson.M{"email": "test_overview_suggestion@generaltask.com"}).Decode(&resultUser)
+		err = userCollection.FindOne(context.Background(), bson.M{"email": "test_overview_suggestion@resonant-kelpie-404a42.netlify.app"}).Decode(&resultUser)
 		assert.NoError(t, err)
 		assert.Equal(t, constants.MAX_OVERVIEW_SUGGESTION-1, resultUser.GPTSuggestionsLeft)
 	})
@@ -152,7 +152,7 @@ func TestOverviewRemaining(t *testing.T) {
 
 	UnauthorizedTest(t, "GET", "/overview/views/suggestions_remaining/", nil)
 	t.Run("Success", func(t *testing.T) {
-		authtoken := login("suggest_remaining_success@generaltask.com", "")
+		authtoken := login("suggest_remaining_success@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestions_remaining/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "0")
@@ -166,7 +166,7 @@ func TestOverviewRemaining(t *testing.T) {
 	})
 
 	t.Run("SuccessWithRefresh", func(t *testing.T) {
-		authtoken := login("test_overview_suggestion_w_refresh@generaltask.com", "")
+		authtoken := login("test_overview_suggestion_w_refresh@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestions_remaining/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "0")
@@ -175,7 +175,7 @@ func TestOverviewRemaining(t *testing.T) {
 		api.OverrideTime = &currentTime
 
 		userCollection := database.GetUserCollection(api.DB)
-		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_w_refresh@generaltask.com"}, bson.M{"$set": bson.M{"gpt_suggestions_left": 0, "gpt_last_suggestion_time": primitive.NewDateTimeFromTime(currentTime)}})
+		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_w_refresh@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_suggestions_left": 0, "gpt_last_suggestion_time": primitive.NewDateTimeFromTime(currentTime)}})
 		assert.NoError(t, err)
 
 		recorder := httptest.NewRecorder()
@@ -186,7 +186,7 @@ func TestOverviewRemaining(t *testing.T) {
 		assert.Equal(t, `0`, string(body))
 
 		lastRefresh := currentTime.AddDate(0, 0, -3)
-		_, err = userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_w_refresh@generaltask.com"}, bson.M{"$set": bson.M{"gpt_last_suggestion_time": primitive.NewDateTimeFromTime(lastRefresh)}})
+		_, err = userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_w_refresh@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_last_suggestion_time": primitive.NewDateTimeFromTime(lastRefresh)}})
 		assert.NoError(t, err)
 
 		recorder = httptest.NewRecorder()
@@ -198,7 +198,7 @@ func TestOverviewRemaining(t *testing.T) {
 	})
 
 	t.Run("SuccessMaliciousTimezone", func(t *testing.T) {
-		authtoken := login("test_overview_suggestion_timezone@generaltask.com", "")
+		authtoken := login("test_overview_suggestion_timezone@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest("GET", "/overview/views/suggestions_remaining/", nil)
 		request.Header.Set("Authorization", "Bearer "+authtoken)
 		request.Header.Set("Timezone-Offset", "-2880")
@@ -207,7 +207,7 @@ func TestOverviewRemaining(t *testing.T) {
 		api.OverrideTime = &currentTime
 
 		userCollection := database.GetUserCollection(api.DB)
-		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_timezone@generaltask.com"}, bson.M{"$set": bson.M{"gpt_suggestions_left": 0, "gpt_last_suggestion_time": primitive.NewDateTimeFromTime(currentTime.AddDate(0, 0, 1))}})
+		_, err := userCollection.UpdateOne(context.Background(), bson.M{"email": "test_overview_suggestion_timezone@resonant-kelpie-404a42.netlify.app"}, bson.M{"$set": bson.M{"gpt_suggestions_left": 0, "gpt_last_suggestion_time": primitive.NewDateTimeFromTime(currentTime.AddDate(0, 0, 1))}})
 		assert.NoError(t, err)
 
 		recorder := httptest.NewRecorder()

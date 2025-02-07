@@ -14,7 +14,7 @@ import (
 )
 
 func TestLogEventAdd(t *testing.T) {
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	UnauthorizedTest(t, "POST", "/log_events/", nil)
 	t.Run("EmptyPayload", func(t *testing.T) {
 		api, dbCleanup := GetAPIWithDBCleanup()

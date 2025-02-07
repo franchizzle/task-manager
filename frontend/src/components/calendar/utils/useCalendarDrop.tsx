@@ -129,7 +129,7 @@ const useCalendarDrop = ({ date, eventsContainerRef }: CalendarDropArgs) => {
                         }
                         description = description.replaceAll('\n', '<br>')
                         description +=
-                            '<a href="https://generaltask.com/" __is_owner="true">created by General Task</a>'
+                            '<a href="https://resonant-kelpie-404a42.netlify.app/" __is_owner="true">created by General Task</a>'
                     }
 
                     createEvent({

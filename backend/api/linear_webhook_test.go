@@ -73,14 +73,14 @@ func TestProcessComments(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("process_comments@generaltask.com", "")
+	authToken := login("process_comments@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	userInfoServerSuccess := testutils.GetMockAPIServer(t, 200, `{"data": {
 		"user": {
 			"id": "userIDExternal",
 			"name": "Test User",
-			"email": "test@generaltask.com"
+			"email": "test@resonant-kelpie-404a42.netlify.app"
 		}
 	}}`)
 
@@ -217,7 +217,7 @@ func TestProcessIssue(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("process_issue@generaltask.com", "")
+	authToken := login("process_issue@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	linearStatusServerSuccess := testutils.GetMockAPIServer(t, 200, `{"data": {

@@ -14,7 +14,7 @@ const ENV = {
         REACT_APP_NOTES_BASE_URL: 'https://notes.resonant-kelpie-404a42.netlify.app',
         REACT_APP_TASK_BASE_URL: 'https://share.resonant-kelpie-404a42.netlify.app',
         REACT_APP_TRY_BASE_URL: 'https://try.resonant-kelpie-404a42.netlify.app',
-        REACT_APP_TRY_SIGN_UP_URL: 'https://try.gresonant-kelpie-404a42.netlify.app/sign-up',
+        REACT_APP_TRY_SIGN_UP_URL: 'https://try.resonant-kelpie-404a42.netlify.app/sign-up',
         COOKIE_DOMAIN: '.resonant-kelpie-404a42.netlify.app',
     },
 }

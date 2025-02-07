@@ -43,7 +43,7 @@ func TestCORSHeaders(t *testing.T) {
 	})
 	t.Run("GET request default", func(t *testing.T) {
 		request, _ := http.NewRequest("GET", "/ping_authed/", nil)
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		request.Header.Add("Authorization", "Bearer "+authToken)
 		recorder := httptest.NewRecorder()
 		router.ServeHTTP(recorder, request)
@@ -57,7 +57,7 @@ func TestCORSHeaders(t *testing.T) {
 	})
 	t.Run("GET request default mobile", func(t *testing.T) {
 		request, _ := http.NewRequest("GET", "/ping_authed/", nil)
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		request.Header.Add("Authorization", "Bearer "+authToken)
 		request.Header.Add("Origin", "http://mobile.localhost.com:3000")
 		recorder := httptest.NewRecorder()
@@ -73,7 +73,7 @@ func TestCORSHeaders(t *testing.T) {
 }
 
 func TestAuthenticationMiddleware(t *testing.T) {
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 
 	t.Run("InvalidLength", func(t *testing.T) {
 		recorder := runAuthenticatedEndpoint("Bearer hello")
@@ -105,7 +105,7 @@ func TestAuthenticationMiddleware(t *testing.T) {
 }
 
 func TestBusinessMiddleware(t *testing.T) {
-	authToken := login("test_business_middleware@generaltask.com", "")
+	authToken := login("test_business_middleware@resonant-kelpie-404a42.netlify.app", "")
 
 	t.Run("Forbidden", func(t *testing.T) {
 		recorder := runBusinessEndpoint("Bearer " + authToken)
@@ -133,7 +133,7 @@ func TestBusinessMiddleware(t *testing.T) {
 }
 
 func TestLoggingMiddleware(t *testing.T) {
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	t.Run("Success", func(t *testing.T) {
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()

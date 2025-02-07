@@ -19,7 +19,7 @@ import (
 )
 
 func TestDashboardData(t *testing.T) {
-	authToken := login("test_dashboard_data@generaltask.com", "")
+	authToken := login("test_dashboard_data@resonant-kelpie-404a42.netlify.app", "")
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 	testTime := time.Date(2023, time.January, 4, 20, 0, 0, 0, time.UTC)

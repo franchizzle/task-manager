@@ -21,7 +21,7 @@ func TestEventDelete(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	eventCollection := database.GetCalendarEventCollection(db)
@@ -59,7 +59,7 @@ func TestEventDelete(t *testing.T) {
 	})
 
 	t.Run("InvalidUser", func(t *testing.T) {
-		secondAuthToken := login("tester@generaltask.com", "")
+		secondAuthToken := login("tester@resonant-kelpie-404a42.netlify.app", "")
 		ServeRequest(t, secondAuthToken, "DELETE", "/events/delete/"+calendarTaskIDHex+"1/", nil, http.StatusNotFound, nil)
 	})
 

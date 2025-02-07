@@ -10,10 +10,10 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "https://generaltask.com/terms-of-service",
+        "termsOfService": "https://resonant-kelpie-404a42.netlify.app/terms-of-service",
         "contact": {
             "name": "Support",
-            "email": "support@generaltask.com"
+            "email": "support@resonant-kelpie-404a42.netlify.app"
         },
         "version": "{{.Version}}"
     },

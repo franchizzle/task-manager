@@ -28,7 +28,7 @@ func TestMarkAsDeleted(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	taskCollection := database.GetTaskCollection(db)
@@ -131,7 +131,7 @@ func TestMarkAsDeleted(t *testing.T) {
 	})
 
 	t.Run("InvalidUser", func(t *testing.T) {
-		secondAuthToken := login("tester@generaltask.com", "")
+		secondAuthToken := login("tester@resonant-kelpie-404a42.netlify.app", "")
 		ServeRequest(t,
 			secondAuthToken,
 			"PATCH",
@@ -169,7 +169,7 @@ func TestMarkAsComplete(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	taskCollection := database.GetTaskCollection(db)
@@ -306,7 +306,7 @@ func TestMarkAsComplete(t *testing.T) {
 	})
 
 	t.Run("InvalidUser", func(t *testing.T) {
-		secondAuthToken := login("tester@generaltask.com", "")
+		secondAuthToken := login("tester@resonant-kelpie-404a42.netlify.app", "")
 		request, _ := http.NewRequest(
 			"PATCH",
 			"/tasks/modify/"+linearTaskIDHex+"/",
@@ -459,7 +459,7 @@ func TestTaskReorder(t *testing.T) {
 	defer dbCleanup()
 	taskCollection := database.GetTaskCollection(db)
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	UnauthorizedTest(t, "PATCH", "/tasks/modify/123/", nil)
@@ -567,7 +567,7 @@ func TestTaskReorder(t *testing.T) {
 		assert.Equal(t, 2, task.IDOrdering)
 	})
 	t.Run("SuccessSubTask", func(t *testing.T) {
-		newAuthToken := login("approved_sub_task@generaltask.com", "")
+		newAuthToken := login("approved_sub_task@resonant-kelpie-404a42.netlify.app", "")
 		newUserID := getUserIDFromAuthToken(t, db, newAuthToken)
 
 		parentTaskID := primitive.NewObjectID()
@@ -677,7 +677,7 @@ func TestTaskReorder(t *testing.T) {
 		taskID := insertResult.InsertedID.(primitive.ObjectID)
 		taskIDHex := taskID.Hex()
 
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -693,7 +693,7 @@ func TestTaskReorder(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"task not found.\",\"taskId\":\""+taskIDHex+"\"}", string(body))
 	})
 	t.Run("MissingOrderingID", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -709,7 +709,7 @@ func TestTaskReorder(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"parameter missing or malformatted\"}", string(body))
 	})
 	t.Run("BadTaskID", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -726,7 +726,7 @@ func TestTaskReorder(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"task not found.\",\"taskId\":\""+taskIDHex+"\"}", string(body))
 	})
 	t.Run("WrongFormatTaskID", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -742,7 +742,7 @@ func TestTaskReorder(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"not found\"}", string(body))
 	})
 	t.Run("BadTaskSectionIDFormat", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -836,7 +836,7 @@ func TestEditFields(t *testing.T) {
 	defer dbCleanup()
 	taskCollection := database.GetTaskCollection(db)
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	notCompleted := false
@@ -1330,7 +1330,7 @@ func TestEditFields(t *testing.T) {
 		userCollection := database.GetUserCollection(api.DB)
 		assert.NoError(t, err)
 		_, err := userCollection.InsertOne(context.Background(), database.User{
-			Email: "john@generaltask.com",
+			Email: "john@resonant-kelpie-404a42.netlify.app",
 		})
 		assert.NoError(t, err)
 
@@ -1356,7 +1356,7 @@ func TestEditFields(t *testing.T) {
 		var task database.Task
 		err = taskCollection.FindOne(context.Background(), bson.M{"_id": insertedTaskID}).Decode(&task)
 		assert.NoError(t, err)
-		assert.Equal(t, "Hello! from: approved@generaltask.com", *task.Title)
+		assert.Equal(t, "Hello! from: approved@resonant-kelpie-404a42.netlify.app", *task.Title)
 	})
 }
 
@@ -1369,7 +1369,7 @@ func TestModifyShareableTask(t *testing.T) {
 
 	taskCollection := database.GetTaskCollection(db)
 
-	authToken := login("test_modify_shareable_task@generaltask.com", "")
+	authToken := login("test_modify_shareable_task@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	expectedDateTime := primitive.NewDateTimeFromTime(time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC))

@@ -13,7 +13,7 @@ import (
 )
 
 func TestNoteModifyEditFields(t *testing.T) {
-	authToken := login("test_notes_modify@generaltask.com", "")
+	authToken := login("test_notes_modify@resonant-kelpie-404a42.netlify.app", "")
 	title1 := "title1"
 	body1 := "body1"
 

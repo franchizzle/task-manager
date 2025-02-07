@@ -99,10 +99,10 @@ definitions:
 host: localhost:8080
 info:
   contact:
-    email: support@generaltask.com
+    email: support@resonant-kelpie-404a42.netlify.app
     name: Support
   description: Making knowledge workers more productive
-  termsOfService: https://generaltask.com/terms-of-service
+  termsOfService: https://resonant-kelpie-404a42.netlify.app/terms-of-service
   title: General Task API
   version: "0.1"
 paths:

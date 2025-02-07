@@ -21,7 +21,7 @@ func TestCreateTask(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 	router := GetRouter(api)
@@ -69,7 +69,7 @@ func TestCreateTask(t *testing.T) {
 		// this currently isn't possible because only GT tasks are supported, but we should add this when it's possible
 	})
 	t.Run("BadTaskSection", func(t *testing.T) {
-		authToken = login("create_task_bad_task_section@generaltask.com", "")
+		authToken = login("create_task_bad_task_section@resonant-kelpie-404a42.netlify.app", "")
 
 		request, _ := http.NewRequest(
 			"POST",
@@ -84,7 +84,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"'id_task_section' is not a valid ID\"}", string(body))
 	})
 	t.Run("BadParentTaskID", func(t *testing.T) {
-		authToken = login("create_task_bad_task_id@generaltask.com", "")
+		authToken = login("create_task_bad_task_id@resonant-kelpie-404a42.netlify.app", "")
 
 		request, _ := http.NewRequest(
 			"POST",
@@ -99,7 +99,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"'parent_task_id' is not a valid ID\"}", string(body))
 	})
 	t.Run("NoParentTaskInDB", func(t *testing.T) {
-		authToken = login("no_parent_task_in_db@generaltask.com", "")
+		authToken = login("no_parent_task_in_db@resonant-kelpie-404a42.netlify.app", "")
 		parentTaskID := primitive.NewObjectID()
 
 		request, _ := http.NewRequest(
@@ -115,7 +115,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"'parent_task_id' is not a valid ID\"}", string(body))
 	})
 	t.Run("WrongUserIDForParent", func(t *testing.T) {
-		authToken = login("wrong_user_id_for_parent@generaltask.com", "")
+		authToken = login("wrong_user_id_for_parent@resonant-kelpie-404a42.netlify.app", "")
 		taskCollection := database.GetTaskCollection(db)
 		title := "title"
 		completed := true
@@ -136,7 +136,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"'parent_task_id' is not a valid ID\"}", string(body))
 	})
 	t.Run("SuccessTitleOnly", func(t *testing.T) {
-		authToken = login("create_task_success_title_only@generaltask.com", "")
+		authToken = login("create_task_success_title_only@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		body := ServeRequest(t, authToken, "POST", "/tasks/create/gt_task/", bytes.NewBuffer([]byte(`{"title": "buy more dogecoin"}`)), http.StatusOK, nil)
@@ -156,7 +156,7 @@ func TestCreateTask(t *testing.T) {
 	})
 	t.Run("SuccessReordering", func(t *testing.T) {
 		// use same auth token as above to reuse task
-		authToken = login("create_task_success_title_only@generaltask.com", "")
+		authToken = login("create_task_success_title_only@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		ServeRequest(t, authToken, "POST", "/tasks/create/gt_task/", bytes.NewBuffer([]byte(`{"title": "buy more dogecoin AGAIN"}`)), http.StatusOK, nil)
@@ -172,12 +172,12 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, constants.DefaultTaskIDOrdering, task2.IDOrdering)
 	})
 	t.Run("SuccessAssignToOtherUser", func(t *testing.T) {
-		authToken = login("assign_to_other_user@generaltask.com", "")
+		authToken = login("assign_to_other_user@resonant-kelpie-404a42.netlify.app", "")
 
 		userCollection := database.GetUserCollection(db)
 		assert.NoError(t, err)
 		johnUser, err := userCollection.InsertOne(context.Background(), database.User{
-			Email: "john@generaltask.com",
+			Email: "john@resonant-kelpie-404a42.netlify.app",
 		})
 		assert.NoError(t, err)
 
@@ -187,7 +187,7 @@ func TestCreateTask(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, 1, len(*tasks))
 		task := (*tasks)[0]
-		assert.Equal(t, "buy more dogecoin from: assign_to_other_user@generaltask.com", *task.Title)
+		assert.Equal(t, "buy more dogecoin from: assign_to_other_user@resonant-kelpie-404a42.netlify.app", *task.Title)
 		assert.Equal(t, "", *task.Body)
 		assert.Equal(t, external.GeneralTaskDefaultAccountID, task.SourceAccountID)
 		// 1 hour is the default
@@ -198,7 +198,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, task.UserID, johnUser.InsertedID.(primitive.ObjectID))
 	})
 	t.Run("SuccessCustomSection", func(t *testing.T) {
-		authToken = login("create_task_success_custom_section@generaltask.com", "")
+		authToken = login("create_task_success_custom_section@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 		sectionCollection := database.GetTaskSectionCollection(db)
 		res, err := sectionCollection.InsertOne(context.Background(), &database.TaskSection{UserID: userID, Name: "moooooon"})
@@ -220,7 +220,7 @@ func TestCreateTask(t *testing.T) {
 		assert.Equal(t, fmt.Sprintf("{\"task_id\":\"%s\"}", task.ID.Hex()), string(body))
 	})
 	t.Run("SuccessSubTask", func(t *testing.T) {
-		authToken = login("create_sub_task@generaltask.com", "")
+		authToken = login("create_sub_task@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 		taskCollection := database.GetTaskCollection(db)
 		title := "title"

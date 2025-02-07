@@ -57,7 +57,7 @@ func TestLoadLinearTasks(t *testing.T) {
 										"id": "test-commenter-id",
 										"name": "Test Commenter",
 										"displayName": "test comm",
-										"email": "testCommenter@generaltask.com"
+										"email": "testCommenter@resonant-kelpie-404a42.netlify.app"
 									}
 								}
 							]
@@ -79,7 +79,7 @@ func TestLoadLinearTasks(t *testing.T) {
 				"id": "6942069420",
 				"name": "Test User",
 				"displayName": "Test Display Name",
-				"email": "test@generaltask.com"
+				"email": "test@resonant-kelpie-404a42.netlify.app"
 			}
 		}}`)
 	linearStatusServerSuccess := testutils.GetMockAPIServer(t, 200, `{"data": {
@@ -278,7 +278,7 @@ func TestLoadLinearTasks(t *testing.T) {
 						ExternalID:  "test-commenter-id",
 						Name:        "Test Commenter",
 						DisplayName: "test comm",
-						Email:       "testCommenter@generaltask.com",
+						Email:       "testCommenter@resonant-kelpie-404a42.netlify.app",
 					},
 					CreatedAt: primitive.NewDateTimeFromTime(commentCreatedAt),
 				},
@@ -422,7 +422,7 @@ func TestLoadLinearTasks(t *testing.T) {
 					ExternalID:  "test-commenter-id",
 					Name:        "Test Commenter",
 					DisplayName: "test comm",
-					Email:       "testCommenter@generaltask.com",
+					Email:       "testCommenter@resonant-kelpie-404a42.netlify.app",
 				},
 				CreatedAt: primitive.NewDateTimeFromTime(commentCreatedAt),
 			},
@@ -459,7 +459,7 @@ func TestLoadLinearTaskCycles(t *testing.T) {
 			"id": "6942069420",
 			"name": "Test User",
 			"displayName": "Test Display Name",
-			"email": "test@generaltask.com"
+			"email": "test@resonant-kelpie-404a42.netlify.app"
 		}
 	}}`)
 	linearStatusServerSuccess := testutils.GetMockAPIServer(t, 200, `{"data": {
@@ -527,7 +527,7 @@ func TestLoadLinearTaskCycles(t *testing.T) {
 										"id": "test-commenter-id",
 										"name": "Test Commenter",
 										"displayName": "test comm",
-										"email": "testCommenter@generaltask.com"
+										"email": "testCommenter@resonant-kelpie-404a42.netlify.app"
 									}
 								}
 							]

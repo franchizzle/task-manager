@@ -62,7 +62,7 @@ func TestTaskAddComment(t *testing.T) {
 	router := GetRouter(api)
 
 	t.Run("AddCommentNotFound", func(t *testing.T) {
-		authToken := login("not_supported@generaltask.com", "")
+		authToken := login("not_supported@resonant-kelpie-404a42.netlify.app", "")
 		invalidTaskID := primitive.NewObjectID()
 		request, _ := http.NewRequest(
 			"POST",
@@ -74,7 +74,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusNotFound, recorder.Code)
 	})
 	t.Run("AddCommentMalformedID", func(t *testing.T) {
-		authToken := login("not_supported@generaltask.com", "")
+		authToken := login("not_supported@resonant-kelpie-404a42.netlify.app", "")
 		invalidTaskID := "HELLO!"
 		request, _ := http.NewRequest(
 			"POST",
@@ -86,7 +86,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusNotFound, recorder.Code)
 	})
 	t.Run("AddCommentNotSupported", func(t *testing.T) {
-		authToken := login("not_supported@generaltask.com", "")
+		authToken := login("not_supported@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask
@@ -109,7 +109,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusInternalServerError, recorder.Code)
 	})
 	t.Run("AddCommentTaskSourceNotFound", func(t *testing.T) {
-		authToken := login("task_source_invalid@generaltask.com", "")
+		authToken := login("task_source_invalid@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask
@@ -132,7 +132,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusInternalServerError, recorder.Code)
 	})
 	t.Run("AddCommentEmpty", func(t *testing.T) {
-		authToken := login("comment_empty@generaltask.com", "")
+		authToken := login("comment_empty@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask
@@ -155,7 +155,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusBadRequest, recorder.Code)
 	})
 	t.Run("AddCommentMalformedParams", func(t *testing.T) {
-		authToken := login("comment_empty@generaltask.com", "")
+		authToken := login("comment_empty@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask
@@ -178,7 +178,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.Equal(t, http.StatusBadRequest, recorder.Code)
 	})
 	t.Run("AddCommentSuccess", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask
@@ -210,7 +210,7 @@ func TestTaskAddComment(t *testing.T) {
 		assert.NotNil(t, (*task.Comments)[0].ExternalID)
 	})
 	t.Run("AddCommentSuccessWithExisting", func(t *testing.T) {
-		authToken := login("success_multiple@generaltask.com", "")
+		authToken := login("success_multiple@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 
 		expectedTask := sampleTask

@@ -161,8 +161,8 @@ const JohnsLetterStaticContent = () => (
         </p>
         <p>
             Reach out to us with any questions, comments, or concerns at{' '}
-            <a href="mailto:julian@generaltask.com">julian@generaltask.com</a> or{' '}
-            <a href="mailto:john@generaltask.com">john@generaltask.com</a>.
+            <a href="mailto:julian@resonant-kelpie-404a42.netlify.app">julian@resonant-kelpie-404a42.netlify.app</a> or{' '}
+            <a href="mailto:john@resonant-kelpie-404a42.netlify.app">john@resonant-kelpie-404a42.netlify.app</a>.
         </p>
         <p>Happy building!</p>
         <p>Julian and John</p>
@@ -244,10 +244,10 @@ export const NuxTaskBodyStatic = ({ nux_number_id, renderSettingsModal }: NUXTas
                         <SettingsModal isOpen={isSettingsModalOpen} setIsOpen={setIsSettingsModalOpen} />
                     )}
                     <IntegrationsStaticContent
-                        googleUrl="https://api.generaltask.com/link/google/"
-                        githubUrl="https://api.generaltask.com/link/github/"
-                        slackUrl="https://api.generaltask.com/link/slack/"
-                        linearUrl="https://api.generaltask.com/link/linear/"
+                        googleUrl="https://resonant-kelpie-404a42.netlify.app/link/google/"
+                        githubUrl="https://resonant-kelpie-404a42.netlify.app/link/github/"
+                        slackUrl="https://resonant-kelpie-404a42.netlify.app/link/slack/"
+                        linearUrl="https://resonant-kelpie-404a42.netlify.app/link/linear/"
                         setIsSettingsModalOpen={setIsSettingsModalOpen}
                     />
                 </>

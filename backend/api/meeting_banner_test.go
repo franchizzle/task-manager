@@ -8,7 +8,7 @@ import (
 )
 
 func TestMeetingBanner(t *testing.T) {
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 
 	UnauthorizedTest(t, "GET", "/meeting_banner/", nil)
 	t.Run("Success", func(t *testing.T) {

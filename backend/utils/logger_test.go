@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/GeneralTask/task-manager/backend/config"
+	"github.com/franchizzle/task-manager/backend/config"
 	"github.com/rs/zerolog/log"
 	"github.com/stretchr/testify/assert"
 )

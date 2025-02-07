@@ -36,7 +36,7 @@ func TestExtractSenders(t *testing.T) {
 }
 
 func TestIsOpenEmailAddress(t *testing.T) {
-	assert.False(t, IsOpenEmailAddress("generaltask.com"))
+	assert.False(t, IsOpenEmailAddress("resonant-kelpie-404a42.netlify.app"))
 	assert.True(t, IsOpenEmailAddress("gmail.com"))
 }
 

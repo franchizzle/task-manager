@@ -91,7 +91,7 @@ const PrivacyPolicyHTML = `
 				using our Services, you agree to the collection, use, disclosure, and
 				procedures this Privacy Policy describes. Beyond the Privacy Policy, your use
 				of our Services is also subject to our Terms of Service
-				(https://generaltask.com/terms-of-service).</span></p>
+				(https://resonant-kelpie-404a42.netlify.app/terms-of-service).</span></p>
 
 		<p class=MsoNormal align=left style='margin-top:0in;text-align:left;text-indent:
 0in'><span lang=EN style='font-family:"Calibri",sans-serif'>&nbsp;</span></p>
@@ -501,8 +501,8 @@ font-weight:normal'>We do not knowingly collect, maintain, or use personal
 				information from children under 13 years of age, and no part of our Service is
 				directed to children. If you learn that a child has provided us with personal
 				information in violation of this Privacy Policy, then you may alert us at </span><span lang=EN><a
-					href="mailto:privacy@generaltask.com"><span style='font-family:"Calibri",sans-serif;
-color:#1155CC;font-weight:normal'>privacy@generaltask.com</span></a></span><span lang=EN
+					href="mailto:privacy@resonant-kelpie-404a42.netlify.app"><span style='font-family:"Calibri",sans-serif;
+color:#1155CC;font-weight:normal'>privacy@resonant-kelpie-404a42.netlify.app</span></a></span><span lang=EN
 				style='font-family:"Calibri",sans-serif;font-weight:normal'>. </span></h1>
 
 		<p class=MsoNormal style='margin-top:12.0pt;text-indent:0in'><b><span lang=EN
@@ -530,8 +530,8 @@ background:white'>Update Your Information </span></b></p>
 		<p class=MsoNormal align=left style='margin-top:0in;text-align:left;text-indent:
 0in'><span lang=EN style='font-family:"Calibri",sans-serif'>You can update your
 				account and profile information or close your account by contacting us at </span><span lang=EN><a
-					href="mailto:support@generaltask.com"><span style='font-family:"Calibri",sans-serif;
-color:#1155CC'>support@generaltask.com</span></a></span><span lang=EN style='font-family:"Calibri",sans-serif'>.
+					href="mailto:support@resonant-kelpie-404a42.netlify.app"><span style='font-family:"Calibri",sans-serif;
+color:#1155CC'>support@resonant-kelpie-404a42.netlify.app</span></a></span><span lang=EN style='font-family:"Calibri",sans-serif'>.
 			</span></p>
 
 		<p class=MsoNormal align=left style='margin-bottom:8.0pt;text-align:left;
@@ -553,8 +553,8 @@ background:white'>Changes to this Privacy Policy</span></b></p>
 		<p class=MsoNormal align=left style='text-align:left;text-indent:0in'><span lang=EN
 				style='font-family:"Calibri",sans-serif'>If you have any questions,
 				comments, or concerns about our processing activities, please email us at </span><span lang=EN><a
-					href="mailto:privacy@generaltask.com"><span style='font-family:"Calibri",sans-serif;
-color:#1155CC'>privacy@generaltask.com</span></a></span><span lang=EN style='font-family:"Calibri",sans-serif'> or
+					href="mailto:privacy@resonant-kelpie-404a42.netlify.app"><span style='font-family:"Calibri",sans-serif;
+color:#1155CC'>privacy@resonant-kelpie-404a42.netlify.app</span></a></span><span lang=EN style='font-family:"Calibri",sans-serif'> or
 				write to us at General Task, Inc.,
 				255 Shoreline Drive, Suite 145, Redwood City, CA 94065.</span></p>
 

@@ -11,7 +11,7 @@ import (
 )
 
 func TestCalendarList(t *testing.T) {
-	authToken := login("test_notes_list@generaltask.com", "")
+	authToken := login("test_notes_list@resonant-kelpie-404a42.netlify.app", "")
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
 	defer dbCleanup()

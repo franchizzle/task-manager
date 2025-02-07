@@ -16,7 +16,7 @@ import (
 )
 
 func TestMeetingPreparationTask(t *testing.T) {
-	authtoken := login("test_meeting_prep_endpoint@generaltask.com", "")
+	authtoken := login("test_meeting_prep_endpoint@resonant-kelpie-404a42.netlify.app", "")
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
 	defer dbCleanup()
@@ -82,7 +82,7 @@ func TestMeetingPreparationTask(t *testing.T) {
 		assert.Equal(t, "[]", string(body))
 	})
 	t.Run("MeetingPrepViewNotAdded", func(t *testing.T) {
-		authtoken2 := login("test_meeting_prep_endpoint_not_added@generaltask.com", "")
+		authtoken2 := login("test_meeting_prep_endpoint_not_added@resonant-kelpie-404a42.netlify.app", "")
 		userID2 := getUserIDFromAuthToken(t, db, authtoken2)
 
 		_, err = database.UpdateOrCreateCalendarAccount(db, userID2, "123abc", "foobar_source",
@@ -156,7 +156,7 @@ func TestGetMeetingPreparationTasksResult(t *testing.T) {
 	testTime := time.Date(2022, time.January, 1, 0, 0, 0, 0, time.UTC)
 	api.OverrideTime = &testTime
 
-	authtoken := login("test_get_meeting_prep_v4@generaltask.com", "")
+	authtoken := login("test_get_meeting_prep_v4@resonant-kelpie-404a42.netlify.app", "")
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
 	defer dbCleanup()

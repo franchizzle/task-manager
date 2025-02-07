@@ -19,7 +19,7 @@ func TestRecurringTaskTemplateList(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 
-	authToken := login("template_list@generaltask.com", "")
+	authToken := login("template_list@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, db, authToken)
 
 	templateCollection := database.GetRecurringTaskTemplateCollection(db)

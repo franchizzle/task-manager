@@ -214,7 +214,7 @@ func TestUpdateLastFullRefreshTime(t *testing.T) {
 	defer dbCleanup()
 
 	userID := primitive.NewObjectID()
-	accountID := "test@generaltask.com"
+	accountID := "test@resonant-kelpie-404a42.netlify.app"
 
 	collection := database.GetExternalTokenCollection(api.DB)
 	token := database.ExternalAPIToken{
@@ -241,7 +241,7 @@ func TestGetActiveLinearTasksFromDBForToken(t *testing.T) {
 	defer dbCleanup()
 
 	userID := primitive.NewObjectID()
-	accountID := "test@generaltask.com"
+	accountID := "test@resonant-kelpie-404a42.netlify.app"
 
 	collection := database.GetTaskCollection(api.DB)
 	_notCompleted := false

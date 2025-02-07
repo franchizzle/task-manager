@@ -288,7 +288,7 @@ func TestGetSharedTask(t *testing.T) {
 	taskOwnerID := primitive.NewObjectID()
 	GetUserCollection(db).InsertOne(context.Background(), &User{
 		ID:    taskOwnerID,
-		Email: "taskOwner@generaltask.com",
+		Email: "taskOwner@resonant-kelpie-404a42.netlify.app",
 	})
 	taskCollection := GetTaskCollection(db)
 	timeTomorrow := time.Now().AddDate(0, 0, 1)
@@ -298,7 +298,7 @@ func TestGetSharedTask(t *testing.T) {
 	userSameDomainID := primitive.NewObjectID()
 	_, err = GetUserCollection(db).InsertOne(context.Background(), &User{
 		ID:    userSameDomainID,
-		Email: "differentUserSameDomain@generaltask.com",
+		Email: "differentUserSameDomain@resonant-kelpie-404a42.netlify.app",
 	})
 	assert.NoError(t, err)
 
@@ -547,7 +547,7 @@ func TestGetSharedNoteWithAuth(t *testing.T) {
 	noteOwnerID := primitive.NewObjectID()
 	GetUserCollection(db).InsertOne(context.Background(), &User{
 		ID:    noteOwnerID,
-		Email: "noteOwner@generaltask.com",
+		Email: "noteOwner@resonant-kelpie-404a42.netlify.app",
 	})
 	noteCollection := GetNoteCollection(db)
 	timeTomorrow := time.Now().AddDate(0, 0, 1)
@@ -558,14 +558,14 @@ func TestGetSharedNoteWithAuth(t *testing.T) {
 	userSameDomainID := primitive.NewObjectID()
 	_, err = GetUserCollection(db).InsertOne(context.Background(), &User{
 		ID:    userSameDomainID,
-		Email: "differentUserSameDomain@generaltask.com",
+		Email: "differentUserSameDomain@resonant-kelpie-404a42.netlify.app",
 	})
 	assert.NoError(t, err)
 
 	otherUserSameDomainID := primitive.NewObjectID()
 	_, err = GetUserCollection(db).InsertOne(context.Background(), &User{
 		ID:    otherUserSameDomainID,
-		Email: "otherDifferentUserSameDomain@generaltask.com",
+		Email: "otherDifferentUserSameDomain@resonant-kelpie-404a42.netlify.app",
 	})
 	assert.NoError(t, err)
 
@@ -733,7 +733,7 @@ func TestGetSharedNoteWithAuth(t *testing.T) {
 		eventCollection := GetCalendarEventCollection(db)
 		event, err := eventCollection.InsertOne(context.Background(), &CalendarEvent{
 			UserID:         noteOwnerID,
-			AttendeeEmails: []string{"differentUserSameDomain@generaltask.com"},
+			AttendeeEmails: []string{"differentUserSameDomain@resonant-kelpie-404a42.netlify.app"},
 		})
 		assert.NoError(t, err)
 
@@ -775,7 +775,7 @@ func TestGetSharedNoteWithAuth(t *testing.T) {
 		eventCollection := GetCalendarEventCollection(db)
 		event, err := eventCollection.InsertOne(context.Background(), &CalendarEvent{
 			UserID:         noteOwnerID,
-			AttendeeEmails: []string{"nope@generaltask.com"},
+			AttendeeEmails: []string{"nope@resonant-kelpie-404a42.netlify.app"},
 		})
 		assert.NoError(t, err)
 
@@ -1399,7 +1399,7 @@ func TestGetUser(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 	userID := primitive.NewObjectID()
-	googleID := "example@generaltask.com"
+	googleID := "example@resonant-kelpie-404a42.netlify.app"
 	name := "Tony the Tiger"
 
 	_, err = GetUserCollection(db).InsertOne(
@@ -1429,7 +1429,7 @@ func TestGetGeneralTaskUserByName(t *testing.T) {
 	assert.NoError(t, err)
 	defer dbCleanup()
 	userID := primitive.NewObjectID()
-	googleID := "example@generaltask.com"
+	googleID := "example@resonant-kelpie-404a42.netlify.app"
 	name := "Tony the Tiger"
 
 	_, err = GetUserCollection(db).InsertOne(

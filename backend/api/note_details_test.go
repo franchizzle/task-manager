@@ -15,7 +15,7 @@ import (
 )
 
 func TestNoteDetail(t *testing.T) {
-	authToken := login("test_notes_detail@generaltask.com", "")
+	authToken := login("test_notes_detail@resonant-kelpie-404a42.netlify.app", "")
 	title1 := "title1"
 	title2 := "title2"
 

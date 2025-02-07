@@ -16,7 +16,7 @@ import (
 )
 
 func TestUserInfo(t *testing.T) {
-	accountID := "userinfo@generaltask.com"
+	accountID := "userinfo@resonant-kelpie-404a42.netlify.app"
 	authToken := login(accountID, "")
 	UnauthorizedTest(t, "GET", "/user_info/", nil)
 	t.Run("SuccessGet", func(t *testing.T) {
@@ -44,9 +44,9 @@ func TestUserInfo(t *testing.T) {
 		assert.Equal(t, http.StatusOK, recorder.Code)
 		body, err := io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
-		assert.Equal(t, `{"agreed_to_terms":false,"opted_into_marketing":false,"business_mode_enabled":false,"name":"name","is_employee":true,"email":"userinfo@generaltask.com","is_company_email":true,"linear_name":"linearName","linear_display_name":"linearDisplayName"}`, string(body))
+		assert.Equal(t, `{"agreed_to_terms":false,"opted_into_marketing":false,"business_mode_enabled":false,"name":"name","is_employee":true,"email":"userinfo@resonant-kelpie-404a42.netlify.app","is_company_email":true,"linear_name":"linearName","linear_display_name":"linearDisplayName"}`, string(body))
 	})
-	authToken = login("userinfo2@generaltask.com", "")
+	authToken = login("userinfo2@resonant-kelpie-404a42.netlify.app", "")
 	t.Run("SuccessNonEmployee", func(t *testing.T) {
 		nonEmployeeAuthToken := login("userinfo@gmail.com", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
@@ -115,7 +115,7 @@ func TestUserInfo(t *testing.T) {
 		assert.Equal(t, http.StatusOK, recorder.Code)
 		body, err = io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
-		assert.Equal(t, "{\"agreed_to_terms\":true,\"opted_into_marketing\":true,\"business_mode_enabled\":false,\"name\":\"\",\"is_employee\":true,\"email\":\"userinfo2@generaltask.com\",\"is_company_email\":true}", string(body))
+		assert.Equal(t, "{\"agreed_to_terms\":true,\"opted_into_marketing\":true,\"business_mode_enabled\":false,\"name\":\"\",\"is_employee\":true,\"email\":\"userinfo2@resonant-kelpie-404a42.netlify.app\",\"is_company_email\":true}", string(body))
 	})
 	t.Run("SuccessPartialUpdate", func(t *testing.T) {
 		// assuming the fields are still true as above
@@ -142,6 +142,6 @@ func TestUserInfo(t *testing.T) {
 		assert.Equal(t, http.StatusOK, recorder.Code)
 		body, err = io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
-		assert.Equal(t, "{\"agreed_to_terms\":true,\"opted_into_marketing\":false,\"business_mode_enabled\":false,\"name\":\"\",\"is_employee\":true,\"email\":\"userinfo2@generaltask.com\",\"is_company_email\":true}", string(body))
+		assert.Equal(t, "{\"agreed_to_terms\":true,\"opted_into_marketing\":false,\"business_mode_enabled\":false,\"name\":\"\",\"is_employee\":true,\"email\":\"userinfo2@resonant-kelpie-404a42.netlify.app\",\"is_company_email\":true}", string(body))
 	})
 }

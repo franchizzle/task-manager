@@ -1008,7 +1008,7 @@ func GetGeneralTaskUserByName(db *mongo.Database, name string) (*User, error) {
 
 	if err := GetUserCollection(db).FindOne(
 		context.Background(),
-		bson.M{"email": name + "@generaltask.com"}).Decode(&user); err != nil {
+		bson.M{"email": name + "@resonant-kelpie-404a42.netlify.app"}).Decode(&user); err != nil {
 		return nil, err
 	}
 	return &user, nil

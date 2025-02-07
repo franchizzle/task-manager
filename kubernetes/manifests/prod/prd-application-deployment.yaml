@@ -26,10 +26,10 @@ spec:
           name: "core"
           env:
             - name: ACCESS_CONTROL_ALLOW_ORIGINS
-              value: https://generaltask.com,https://mobile.generaltask.com,https://app.generaltask.com/
+              value: https://resonant-kelpie-404a42.netlify.app,https://mobile.resonant-kelpie-404a42.netlify.app,https://app.resonant-kelpie-404a42.netlify.app/
 
             - name: DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN
-              value: https://generaltask.com
+              value: https://resonant-kelpie-404a42.netlify.app
 
             - name: COOKIE_DOMAIN
               valueFrom:

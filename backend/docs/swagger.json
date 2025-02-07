@@ -3,10 +3,10 @@
     "info": {
         "description": "Making knowledge workers more productive",
         "title": "General Task API",
-        "termsOfService": "https://generaltask.com/terms-of-service",
+        "termsOfService": "https://resonant-kelpie-404a42.netlify.app/terms-of-service",
         "contact": {
             "name": "Support",
-            "email": "support@generaltask.com"
+            "email": "support@resonant-kelpie-404a42.netlify.app"
         },
         "version": "0.1"
     },

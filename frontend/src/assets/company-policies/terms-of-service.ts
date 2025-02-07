@@ -291,7 +291,7 @@ const TermsOfServiceHTML = `
 
 		<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri",sans-serif'>Welcome,
 				and thank you for your interest in General Task, Inc. (“<b><u>General Task</u></b>,”
-				“<b><u>we</u></b>,” or “<b><u>us</u></b>”) and our website at generaltask.com,
+				“<b><u>we</u></b>,” or “<b><u>us</u></b>”) and our website at resonant-kelpie-404a42.netlify.app,
 				along with our related websites, hosted or downloadable applications, and other
 				services provided by us (collectively, the “<b><u>Service</u></b>”). These
 				Terms of Service are a legally binding contract between you and General Task
@@ -353,7 +353,7 @@ font-family:"Calibri",sans-serif'> NOTICE</span></b><span style='font-size:
 			solely responsible for maintaining the confidentiality of your account and
 			password, and you accept responsibility for all activities that occur under
 			your account. If you believe that your account is no longer secure, then you should
-			immediately notify us at <a href="mailto:support@generaltask.com">support@generaltask.com</a>.
+			immediately notify us at <a href="mailto:support@resonant-kelpie-404a42.netlify.app">support@resonant-kelpie-404a42.netlify.app</a>.
 			<br>
 			<br>
 		</h1>
@@ -648,7 +648,7 @@ font-family:"Calibri",sans-serif'> NOTICE</span></b><span style='font-size:
 				your account on the Service, or suspend or terminate your access to the
 				Service, at any time for any reason or no reason, with or without notice, and
 				without any liability to you arising from such termination. You may terminate
-				your account and these Terms at any time by contacting customer service at support@generaltask.com.</a>
+				your account and these Terms at any time by contacting customer service at support@resonant-kelpie-404a42.netlify.app.</a>
 		</h2>
 
 		<h2><a name="_Ref468779659"></a><a name="_Ref457483455">11.3<span
@@ -818,7 +818,7 @@ font-family:"Calibri",sans-serif'> NOTICE</span></b><span style='font-size:
 			Opt-Out, 255 Shoreline Drive, Suite 145, Redwood City, CA 94065, that specifies: your
 			full legal name, the email address associated with your account on the Service,
 			and a statement that you wish to opt out of arbitration, or (b) sending an
-			email to <a href="mailto:support@generaltask.com">support@generaltask.com</a>
+			email to <a href="mailto:support@resonant-kelpie-404a42.netlify.app">support@resonant-kelpie-404a42.netlify.app</a>
 			with the same information (either one, an “<b><u>Opt-Out Notice</u></b>”). Once
 			General Task receives your Opt-Out Notice, this Section&nbsp;15
 			will be void and any action arising out of these Terms will be resolved as set
@@ -984,7 +984,7 @@ background:#F2F4F7'> </span></h2>
 						Information</span></strong></a><strong><span style='font-family:"Calibri",sans-serif;
 font-weight:normal'>. </span></strong>The Service is offered by General Task, Inc.,
 			located at 255 Shoreline Drive, Suite 145, Redwood City, CA 94065. You may contact us by
-			sending correspondence to that address or by emailing us at support@generaltask.com.</h2>
+			sending correspondence to that address or by emailing us at support@resonant-kelpie-404a42.netlify.app.</h2>
 
 		<h2>16.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			</span><b>Notice to California Residents</b>. If you are a California resident,

@@ -15,7 +15,7 @@ import (
 )
 
 func TestCreateNote(t *testing.T) {
-	authToken := login("approved@generaltask.com", "")
+	authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 
@@ -25,7 +25,7 @@ func TestCreateNote(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"invalid or missing parameter\"}", string(response))
 	})
 	t.Run("NoLinkedEvent", func(t *testing.T) {
-		authToken = login("create_task_no_linked@generaltask.com", "")
+		authToken = login("create_task_no_linked@resonant-kelpie-404a42.netlify.app", "")
 
 		defaultNoteCreateObject := NoteCreateParams{
 			Title:         "buy more dogecoin",
@@ -37,7 +37,7 @@ func TestCreateNote(t *testing.T) {
 		_ = ServeRequest(t, authToken, "POST", "/notes/create/", bytes.NewBuffer(bodyParams), http.StatusBadRequest, nil)
 	})
 	t.Run("SuccessTitleOnly", func(t *testing.T) {
-		authToken = login("create_task_success_title_only@generaltask.com", "")
+		authToken = login("create_task_success_title_only@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		body := ServeRequest(t, authToken, "POST", "/notes/create/", bytes.NewBuffer([]byte(`{"title": "buy more dogecoin", "body": "test body", "author": "test author", "is_shared": true}`)), http.StatusOK, nil)
@@ -53,7 +53,7 @@ func TestCreateNote(t *testing.T) {
 		assert.Equal(t, fmt.Sprintf("{\"note_id\":\"%s\"}", note.ID.Hex()), string(body))
 	})
 	t.Run("SuccessWithLinkedEvent", func(t *testing.T) {
-		authToken = login("create_task_success_with_linked@generaltask.com", "")
+		authToken = login("create_task_success_with_linked@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		eventCollection := database.GetCalendarEventCollection(api.DB)

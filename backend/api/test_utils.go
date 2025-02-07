@@ -256,7 +256,7 @@ func runBusinessEndpoint(attemptedHeader string) *httptest.ResponseRecorder {
 }
 
 func createRandomGTEmail() string {
-	return fmt.Sprintf("%s@generaltask.com", uuid.New().String())
+	return fmt.Sprintf("%s@resonant-kelpie-404a42.netlify.app", uuid.New().String())
 }
 
 func ServeRequest(t *testing.T, authToken string, method string, url string, requestBody io.Reader, expectedReponseCode int, api *API) []byte {

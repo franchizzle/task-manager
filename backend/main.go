@@ -13,10 +13,10 @@ import (
 // @title           General Task API
 // @version         0.1
 // @description     Making knowledge workers more productive
-// @termsOfService  https://generaltask.com/terms-of-service
+// @termsOfService  https://resonant-kelpie-404a42.netlify.app/terms-of-service
 
 // @contact.name   Support
-// @contact.email  support@generaltask.com
+// @contact.email  support@resonant-kelpie-404a42.netlify.app
 
 // @host      localhost:8080
 // @BasePath  /

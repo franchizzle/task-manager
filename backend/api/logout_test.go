@@ -14,7 +14,7 @@ import (
 func TestLogout(t *testing.T) {
 	UnauthorizedTest(t, "POST", "/logout/", nil)
 	t.Run("Logout", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 
 		db, dbCleanup, err := database.GetDBConnection()
 		assert.NoError(t, err)

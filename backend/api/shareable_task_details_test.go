@@ -14,7 +14,7 @@ import (
 )
 
 func TestShareableTaskDetails(t *testing.T) {
-	authToken := login("test_shareable_task_details@generaltask.com", "")
+	authToken := login("test_shareable_task_details@resonant-kelpie-404a42.netlify.app", "")
 	db, dbCleanup, err := database.GetDBConnection()
 	assert.NoError(t, err)
 	defer dbCleanup()
@@ -75,7 +75,7 @@ func TestShareableTaskDetails(t *testing.T) {
 		ServeRequest(t, differentDomainUserToken, "GET", fmt.Sprintf("/shareable_tasks/detail/%s/", publicSharedTaskID), nil, 200, api)
 	})
 	t.Run("SuccessDomain", func(t *testing.T) {
-		sameDomain := login("sameDomainDifferentUser@generaltask.com", "")
+		sameDomain := login("sameDomainDifferentUser@resonant-kelpie-404a42.netlify.app", "")
 		ServeRequest(t, sameDomain, "GET", fmt.Sprintf("/shareable_tasks/detail/%s/", domainSharedTaskID), nil, 200, api)
 	})
 	t.Run("DifferentDomain", func(t *testing.T) {
@@ -126,6 +126,6 @@ func TestShareableTaskDetails(t *testing.T) {
 		var result ShareableTaskDetailsResponse
 		err := json.Unmarshal(response, &result)
 		assert.NoError(t, err)
-		assert.Equal(t, "@generaltask.com", result.Domain)
+		assert.Equal(t, "@resonant-kelpie-404a42.netlify.app", result.Domain)
 	})
 }

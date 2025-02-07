@@ -15,7 +15,7 @@ import (
 )
 
 func TestDashboardFetch(t *testing.T) {
-	authToken := login("test_dashboard_fetch@generaltask.com", "")
+	authToken := login("test_dashboard_fetch@resonant-kelpie-404a42.netlify.app", "")
 	UnauthorizedTest(t, "GET", "/dashboard/data/fetch/", nil)
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()

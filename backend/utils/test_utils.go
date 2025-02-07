@@ -3,7 +3,7 @@ package utils
 import (
 	"testing"
 
-	"github.com/GeneralTask/task-manager/backend/database"
+	"github.com/franchizzle/task-manager/backend/database"
 	"github.com/stretchr/testify/assert"
 )
 

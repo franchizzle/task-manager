@@ -255,7 +255,7 @@ font-family:"Calibri",sans-serif'>These terms reflect the way General Task’s
 font-family:"Calibri",sans-serif'>Reading and understanding the full Terms of
 				Service is important because, by using our Service, you’re agreeing to be legally
 				bound by these terms. If you have any questions for us regarding the Terms of
-				Service, please contact us via support@generaltask.com.</span></p>
+				Service, please contact us via support@resonant-kelpie-404a42.netlify.app.</span></p>
 	</div>
 
 </body>

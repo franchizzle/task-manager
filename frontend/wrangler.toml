@@ -2,7 +2,7 @@ account_id = "91d7983e0bff08e0cf76f81cf79abe50"
 
 name = "frontend"
 type = "webpack"
-route = 'generaltask.com/*'
+route = 'resonant-kelpie-404a42.netlify.app/*'
 zone_id = '3902eeab1159d5dbc8604825e8b7c7b0'
 site = {bucket = "./dist",entry-point = "workers-site"}
 compatibility_date = "2022-03-24"

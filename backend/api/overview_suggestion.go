@@ -58,7 +58,7 @@ func (api *API) OverviewViewsSuggestion(c *gin.Context) {
 		c.JSON(400, gin.H{"error": "error fetching suggestions"})
 		return
 	}
-	if suggestionsLeft < 1 && !strings.HasSuffix(strings.ToLower(user.Email), "@generaltask.com") {
+	if suggestionsLeft < 1 && !strings.HasSuffix(strings.ToLower(user.Email), "@resonant-kelpie-404a42.netlify.app") {
 		c.JSON(400, gin.H{"error": "no remaining suggestions for user"})
 		return
 	}

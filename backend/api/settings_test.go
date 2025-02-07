@@ -30,7 +30,7 @@ func TestSettingsGet(t *testing.T) {
 		})
 		assert.NoError(t, err)
 
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -44,7 +44,7 @@ func TestSettingsGet(t *testing.T) {
 		assert.Contains(t, string(body), "{\"field_key\":\"github_filtering_preference\",\"field_name\":\"\",\"choices\":[{\"choice_key\":\"actionable_only\",\"choice_name\":\"\"},{\"choice_key\":\"all_prs\",\"choice_name\":\"\"}],\"field_value\":\"actionable_only\"}")
 	})
 	t.Run("Success", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		_, err := settingCollection.InsertOne(context.Background(), &database.UserSetting{
@@ -82,7 +82,7 @@ func TestSettingsModify(t *testing.T) {
 	defer dbCleanup()
 
 	t.Run("EmptyPayload", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -96,7 +96,7 @@ func TestSettingsModify(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"parameters missing or malformatted.\"}", string(body))
 	})
 	t.Run("InvalidPayload", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -114,7 +114,7 @@ func TestSettingsModify(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"parameters missing or malformatted.\"}", string(body))
 	})
 	t.Run("BadKey", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -132,7 +132,7 @@ func TestSettingsModify(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"failed to update settings: invalid setting: dogecoin\"}", string(body))
 	})
 	t.Run("BadValue", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -150,7 +150,7 @@ func TestSettingsModify(t *testing.T) {
 		assert.Equal(t, "{\"detail\":\"failed to update settings: invalid value: tothemoon\"}", string(body))
 	})
 	t.Run("Success", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -177,7 +177,7 @@ func TestSettingsModify(t *testing.T) {
 		assert.Contains(t, string(body), "{\"field_key\":\"github_filtering_preference\",\"field_name\":\"\",\"choices\":[{\"choice_key\":\"actionable_only\",\"choice_name\":\"\"},{\"choice_key\":\"all_prs\",\"choice_name\":\"\"}],\"field_value\":\"all_prs\"}")
 	})
 	t.Run("SuccessAlreadyExists", func(t *testing.T) {
-		authToken := login("approved2@generaltask.com", "")
+		authToken := login("approved2@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, db, authToken)
 		settings.UpdateUserSetting(db, userID, constants.SettingFieldGithubFilteringPreference, constants.ChoiceKeyActionableOnly)
 

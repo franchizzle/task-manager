@@ -37,8 +37,8 @@ func TestEventList(t *testing.T) {
 	startTime, _ := time.Parse(time.RFC3339, "2021-03-06T15:00:00-05:00")
 	endTime, _ := time.Parse(time.RFC3339, "2021-03-06T15:30:00-05:00")
 	afterEndTime, _ := time.Parse(time.RFC3339, "2021-03-06T15:30:01-05:00")
-	sourceAccountID := "TestEventList@generaltask.com"
-	authToken := login("TestEventList@generaltask.com", "")
+	sourceAccountID := "TestEventList@resonant-kelpie-404a42.netlify.app"
+	authToken := login("TestEventList@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 	externalTokenCollection := database.GetExternalTokenCollection(api.DB)
@@ -173,7 +173,7 @@ func TestEventList(t *testing.T) {
 			EventType:       "outOfOffice",
 			Start:           &calendar.EventDateTime{DateTime: "2023-03-06T15:01:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2023-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "ooo_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -186,7 +186,7 @@ func TestEventList(t *testing.T) {
 			Location:        "normal event location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:01:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "normal_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -200,7 +200,7 @@ func TestEventList(t *testing.T) {
 			Location:        "new event location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "new_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -247,8 +247,8 @@ func TestEventDetail(t *testing.T) {
 
 	startTime, _ := time.Parse(time.RFC3339, "2021-03-06T15:00:00-05:00")
 	endTime, _ := time.Parse(time.RFC3339, "2021-03-06T15:30:00-05:00")
-	sourceAccountID := "TestEventDetail@generaltask.com"
-	authToken := login("TestEventDetail@generaltask.com", "")
+	sourceAccountID := "TestEventDetail@resonant-kelpie-404a42.netlify.app"
+	authToken := login("TestEventDetail@resonant-kelpie-404a42.netlify.app", "")
 	userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 	eventCollection := database.GetCalendarEventCollection(api.DB)
@@ -271,7 +271,7 @@ func TestEventDetail(t *testing.T) {
 		_ = ServeRequest(t, authToken, "GET", "/events/"+eventID2.Hex()+"/", nil, http.StatusNotFound, api)
 	})
 	t.Run("WrongUser", func(t *testing.T) {
-		authToken2 := login("wronguserforeventdetails@generaltask.com", "")
+		authToken2 := login("wronguserforeventdetails@resonant-kelpie-404a42.netlify.app", "")
 		_ = ServeRequest(t, authToken2, "GET", "/events/"+eventID.Hex()+"/", nil, http.StatusNotFound, api)
 	})
 	t.Run("Success", func(t *testing.T) {

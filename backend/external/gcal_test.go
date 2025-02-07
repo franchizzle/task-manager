@@ -40,7 +40,7 @@ func TestGetEvents(t *testing.T) {
 			Location:        "Event Location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "standard_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -53,7 +53,7 @@ func TestGetEvents(t *testing.T) {
 		standardDBEvent := database.CalendarEvent{
 			IDExternal:    "standard_event",
 			CalendarID:    accountID,
-			Deeplink:      "generaltask.com&authuser=exampleAccountID",
+			Deeplink:      "resonant-kelpie-404a42.netlify.app&authuser=exampleAccountID",
 			Title:         "Standard Event",
 			Location:      "Event Location",
 			Body:          "event <strong>description</strong>",
@@ -69,7 +69,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:        "Auto Event (via Clockwise)",
 			Start:          &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:            &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:       "generaltask.com",
+			HtmlLink:       "resonant-kelpie-404a42.netlify.app",
 			Id:             "auto_event",
 			ServerResponse: googleapi.ServerResponse{HTTPStatusCode: 0},
 		}
@@ -79,7 +79,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:        "All day Event",
 			Start:          &calendar.EventDateTime{Date: "2021-03-06"},
 			End:            &calendar.EventDateTime{Date: "2021-03-06"},
-			HtmlLink:       "generaltask.com",
+			HtmlLink:       "resonant-kelpie-404a42.netlify.app",
 			Id:             "all_day_event",
 			ServerResponse: googleapi.ServerResponse{HTTPStatusCode: 0},
 		}
@@ -141,7 +141,7 @@ func TestGetEvents(t *testing.T) {
 			Location:        "new location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "standard_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: false},
@@ -156,7 +156,7 @@ func TestGetEvents(t *testing.T) {
 		standardDBEvent := database.CalendarEvent{
 			IDExternal:      "standard_event",
 			CalendarID:      "exampleAccountID",
-			Deeplink:        "generaltask.com&authuser=exampleAccountID",
+			Deeplink:        "resonant-kelpie-404a42.netlify.app&authuser=exampleAccountID",
 			Title:           "Standard Event",
 			Location:        "old location",
 			Body:            "old description",
@@ -178,7 +178,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:        "All day Event",
 			Start:          &calendar.EventDateTime{Date: "2021-03-06"},
 			End:            &calendar.EventDateTime{Date: "2021-03-06"},
-			HtmlLink:       "generaltask.com",
+			HtmlLink:       "resonant-kelpie-404a42.netlify.app",
 			Id:             "all_day_event",
 			ServerResponse: googleapi.ServerResponse{HTTPStatusCode: 0},
 		}
@@ -220,7 +220,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:         "Standard Event",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "standard_event",
 			GuestsCanModify: true,
 			Organizer:       &calendar.EventOrganizer{Self: false},
@@ -236,7 +236,7 @@ func TestGetEvents(t *testing.T) {
 		standardDBEvent := database.CalendarEvent{
 			IDExternal:      "standard_event",
 			CalendarID:      "exampleAccountID",
-			Deeplink:        "generaltask.com&authuser=exampleAccountID",
+			Deeplink:        "resonant-kelpie-404a42.netlify.app&authuser=exampleAccountID",
 			Title:           "Standard Event",
 			Location:        "Standard Location",
 			SourceID:        TASK_SOURCE_ID_GCAL,
@@ -302,7 +302,7 @@ func TestGetEvents(t *testing.T) {
 			Location:        "Standard Location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "standard_event",
 			GuestsCanModify: true,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -327,7 +327,7 @@ func TestGetEvents(t *testing.T) {
 		standardDBEvent := database.CalendarEvent{
 			IDExternal:    "standard_event",
 			CalendarID:    "exampleAccountID",
-			Deeplink:      "generaltask.com&authuser=exampleAccountID",
+			Deeplink:      "resonant-kelpie-404a42.netlify.app&authuser=exampleAccountID",
 			Title:         "Standard Event",
 			Location:      "Standard Location",
 			SourceID:      TASK_SOURCE_ID_GCAL,
@@ -345,7 +345,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:        "All day Event",
 			Start:          &calendar.EventDateTime{Date: "2021-03-06"},
 			End:            &calendar.EventDateTime{Date: "2021-03-06"},
-			HtmlLink:       "generaltask.com",
+			HtmlLink:       "resonant-kelpie-404a42.netlify.app",
 			Id:             "all_day_event",
 			ServerResponse: googleapi.ServerResponse{HTTPStatusCode: 0},
 		}
@@ -387,7 +387,7 @@ func TestGetEvents(t *testing.T) {
 			Location:        "Event Location",
 			Start:           &calendar.EventDateTime{DateTime: "2021-03-06T15:00:00-05:00"},
 			End:             &calendar.EventDateTime{DateTime: "2021-03-06T15:30:00-05:00"},
-			HtmlLink:        "generaltask.com",
+			HtmlLink:        "resonant-kelpie-404a42.netlify.app",
 			Id:              "standard_event",
 			GuestsCanModify: false,
 			Organizer:       &calendar.EventOrganizer{Self: true},
@@ -402,7 +402,7 @@ func TestGetEvents(t *testing.T) {
 			Summary:        "All day Event",
 			Start:          &calendar.EventDateTime{Date: "2021-03-06"},
 			End:            &calendar.EventDateTime{Date: "2021-03-06"},
-			HtmlLink:       "generaltask.com",
+			HtmlLink:       "resonant-kelpie-404a42.netlify.app",
 			Id:             "all_day_event",
 			ServerResponse: googleapi.ServerResponse{HTTPStatusCode: 0},
 		}
@@ -414,7 +414,7 @@ func TestGetEvents(t *testing.T) {
 		standardDBEvent := database.CalendarEvent{
 			IDExternal:    "standard_event",
 			CalendarID:    "exampleAccountID",
-			Deeplink:      "generaltask.com&authuser=exampleAccountID",
+			Deeplink:      "resonant-kelpie-404a42.netlify.app&authuser=exampleAccountID",
 			Title:         "Standard Event",
 			Location:      "Event Location",
 			Body:          "event <strong>description</strong>",
@@ -495,7 +495,7 @@ func TestCreateNewEvent(t *testing.T) {
 			TimeZone:          "test timezone",
 			DatetimeStart:     testutils.CreateTimestamp("2019-04-20"),
 			DatetimeEnd:       testutils.CreateTimestamp("2020-04-20"),
-			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@generaltask.com"}},
+			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@resonant-kelpie-404a42.netlify.app"}},
 			AddConferenceCall: false,
 		}
 
@@ -521,13 +521,13 @@ func TestCreateNewEvent(t *testing.T) {
 			TimeZone:          "test timezone",
 			DatetimeStart:     testutils.CreateTimestamp("2019-04-20"),
 			DatetimeEnd:       testutils.CreateTimestamp("2020-04-20"),
-			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@generaltask.com"}},
+			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@resonant-kelpie-404a42.netlify.app"}},
 			AddConferenceCall: false,
 		}
 		expectedRequestEvent := calendar.Event{
 			Attendees: []*calendar.EventAttendee{{
 				DisplayName: "test attendee",
-				Email:       "test_attendee@generaltask.com",
+				Email:       "test_attendee@resonant-kelpie-404a42.netlify.app",
 			}},
 			Description: "test description",
 			Start:       &calendar.EventDateTime{Date: "", DateTime: "2019-04-20T00:00:00Z", TimeZone: "test timezone"},
@@ -558,14 +558,14 @@ func TestCreateNewEvent(t *testing.T) {
 			TimeZone:          "test timezone",
 			DatetimeStart:     testutils.CreateTimestamp("2019-04-20"),
 			DatetimeEnd:       testutils.CreateTimestamp("2020-04-20"),
-			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@generaltask.com"}},
+			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@resonant-kelpie-404a42.netlify.app"}},
 			AddConferenceCall: false,
 			LinkedTaskID:      primitive.NewObjectID(),
 		}
 		expectedRequestEvent := calendar.Event{
 			Attendees: []*calendar.EventAttendee{{
 				DisplayName: "test attendee",
-				Email:       "test_attendee@generaltask.com",
+				Email:       "test_attendee@resonant-kelpie-404a42.netlify.app",
 			}},
 			Description: "test description",
 			Start:       &calendar.EventDateTime{Date: "", DateTime: "2019-04-20T00:00:00Z", TimeZone: "test timezone"},
@@ -597,13 +597,13 @@ func TestCreateNewEvent(t *testing.T) {
 			TimeZone:          "test timezone",
 			DatetimeStart:     testutils.CreateTimestamp("2019-04-20"),
 			DatetimeEnd:       testutils.CreateTimestamp("2020-04-20"),
-			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@generaltask.com"}},
+			Attendees:         []Attendee{{Name: "test attendee", Email: "test_attendee@resonant-kelpie-404a42.netlify.app"}},
 			AddConferenceCall: true,
 		}
 		expectedRequestEvent := calendar.Event{
 			Attendees: []*calendar.EventAttendee{{
 				DisplayName: "test attendee",
-				Email:       "test_attendee@generaltask.com",
+				Email:       "test_attendee@resonant-kelpie-404a42.netlify.app",
 			}},
 			Description: "test description",
 			Start:       &calendar.EventDateTime{Date: "", DateTime: "2019-04-20T00:00:00Z", TimeZone: "test timezone"},

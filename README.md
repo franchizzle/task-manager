@@ -122,7 +122,7 @@ We currently perform backend deploys using the Heroku CLI. Assuming you have the
 
 ### One-time Kubernetes setup
 
-Add the appropriate group (`prd-gtsk-uswest1-full-access-group`) to your iamrole: https://github.com/GeneralTask/task-manager/blob/630b25b858baeeb0e4a0f775b7e5e96a490022c9/kubernetes/manifests/prod/prd-auth-config.yaml#L29-L32 and have a General Task admin apply the changes to the prod k8s cluster. Alternatively, adding these changes to the file above, and merging those changes into master will apply these changes as well (the credentials will be automatically added by AWS CodeBuild CI after landing the change).
+Add the appropriate group (`prd-gtsk-uswest1-full-access-group`) to your iamrole: https://github.com/franchizzle/task-manager/blob/630b25b858baeeb0e4a0f775b7e5e96a490022c9/kubernetes/manifests/prod/prd-auth-config.yaml#L29-L32 and have a General Task admin apply the changes to the prod k8s cluster. Alternatively, adding these changes to the file above, and merging those changes into master will apply these changes as well (the credentials will be automatically added by AWS CodeBuild CI after landing the change).
 
 Update your AWS access credentials. You can find your AWS credentials by logging into the console, and access your profile's security credentials. Generate some Access Credentials for your account, and place them into `~/.aws/credentials`. The format will look like so:
 

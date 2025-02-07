@@ -23,7 +23,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 	api.OverrideTime = &overrideDate
 
 	t.Run("DailyTest", func(t *testing.T) {
-		authToken := login("daily_recur@generaltask.com", "")
+		authToken := login("daily_recur@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"
@@ -68,7 +68,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 		assert.Equal(t, templateID, (*tasks)[5].RecurringTaskTemplateID)
 	})
 	t.Run("WeekDailyTest", func(t *testing.T) {
-		authToken := login("week_daily_recur@generaltask.com", "")
+		authToken := login("week_daily_recur@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"
@@ -113,7 +113,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 		assert.Equal(t, templateID, (*tasks)[5].RecurringTaskTemplateID)
 	})
 	t.Run("WeeklyTest", func(t *testing.T) {
-		authToken := login("weekly_recur@generaltask.com", "")
+		authToken := login("weekly_recur@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"
@@ -159,7 +159,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 		assert.Equal(t, templateID, (*tasks)[5].RecurringTaskTemplateID)
 	})
 	t.Run("WeeklyTest", func(t *testing.T) {
-		authToken := login("weekly_recur_replace@generaltask.com", "")
+		authToken := login("weekly_recur_replace@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"
@@ -207,7 +207,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 		assert.Equal(t, templateID, (*tasks)[5].RecurringTaskTemplateID)
 	})
 	t.Run("MonthlyTest", func(t *testing.T) {
-		authToken := login("monthly_recur@generaltask.com", "")
+		authToken := login("monthly_recur@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"
@@ -252,7 +252,7 @@ func TestRecurringTaskTemplateBackfill(t *testing.T) {
 		assert.Equal(t, templateID, (*tasks)[5].RecurringTaskTemplateID)
 	})
 	t.Run("YearlyTest", func(t *testing.T) {
-		authToken := login("yearly_recur@generaltask.com", "")
+		authToken := login("yearly_recur@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 
 		title := "hello!"

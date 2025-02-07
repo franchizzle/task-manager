@@ -18,7 +18,7 @@ import (
 
 func TestSupportedAccountTypesList(t *testing.T) {
 	t.Run("Success", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		api, dbCleanup := GetAPIWithDBCleanup()
 		defer dbCleanup()
 		router := GetRouter(api)
@@ -40,7 +40,7 @@ func TestLinkedAccountsList(t *testing.T) {
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 	t.Run("SuccessOnlyGoogle", func(t *testing.T) {
-		authToken := login("linkedaccounts@generaltask.com", "")
+		authToken := login("linkedaccounts@resonant-kelpie-404a42.netlify.app", "")
 		router := GetRouter(api)
 		request, _ := http.NewRequest("GET", "/linked_accounts/", nil)
 		request.Header.Add("Authorization", "Bearer "+authToken)
@@ -50,10 +50,10 @@ func TestLinkedAccountsList(t *testing.T) {
 		body, err := io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
 		googleTokenID := getGoogleTokenFromAuthToken(t, api.DB, authToken).ID.Hex()
-		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts@generaltask.com\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false}]", string(body))
+		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts@resonant-kelpie-404a42.netlify.app\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false}]", string(body))
 	})
 	t.Run("Success", func(t *testing.T) {
-		authToken := login("linkedaccounts2@generaltask.com", "")
+		authToken := login("linkedaccounts2@resonant-kelpie-404a42.netlify.app", "")
 		linearTokenID := insertLinearToken(t, api.DB, authToken, false).Hex()
 		router := GetRouter(api)
 		request, _ := http.NewRequest("GET", "/linked_accounts/", nil)
@@ -64,12 +64,12 @@ func TestLinkedAccountsList(t *testing.T) {
 		body, err := io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
 		googleTokenID := getGoogleTokenFromAuthToken(t, api.DB, authToken).ID.Hex()
-		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts2@generaltask.com\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false},{\"id\":\""+linearTokenID+"\",\"display_id\":\"Linear\",\"name\":\"Linear\",\"logo\":\"/images/linear.png\",\"logo_v2\":\"linear\",\"is_unlinkable\":true,\"has_bad_token\":false}]", string(body))
+		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts2@resonant-kelpie-404a42.netlify.app\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false},{\"id\":\""+linearTokenID+"\",\"display_id\":\"Linear\",\"name\":\"Linear\",\"logo\":\"/images/linear.png\",\"logo_v2\":\"linear\",\"is_unlinkable\":true,\"has_bad_token\":false}]", string(body))
 
 	})
 
 	t.Run("SuccessWithBadToken", func(t *testing.T) {
-		authToken := login("linkedaccounts3@generaltask.com", "")
+		authToken := login("linkedaccounts3@resonant-kelpie-404a42.netlify.app", "")
 		linearTokenID := insertLinearToken(t, api.DB, authToken, true).Hex()
 
 		api, dbCleanup := GetAPIWithDBCleanup()
@@ -84,7 +84,7 @@ func TestLinkedAccountsList(t *testing.T) {
 		body, err := io.ReadAll(recorder.Body)
 		assert.NoError(t, err)
 		googleTokenID := getGoogleTokenFromAuthToken(t, api.DB, authToken).ID.Hex()
-		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts3@generaltask.com\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false},{\"id\":\""+linearTokenID+"\",\"display_id\":\"Linear\",\"name\":\"Linear\",\"logo\":\"/images/linear.png\",\"logo_v2\":\"linear\",\"is_unlinkable\":true,\"has_bad_token\":true}]", string(body))
+		assert.Equal(t, "[{\"id\":\""+googleTokenID+"\",\"display_id\":\"linkedaccounts3@resonant-kelpie-404a42.netlify.app\",\"name\":\"Google Calendar\",\"logo\":\"/images/gcal.png\",\"logo_v2\":\"gcal\",\"is_unlinkable\":false,\"has_bad_token\":false},{\"id\":\""+linearTokenID+"\",\"display_id\":\"Linear\",\"name\":\"Linear\",\"logo\":\"/images/linear.png\",\"logo_v2\":\"linear\",\"is_unlinkable\":true,\"has_bad_token\":true}]", string(body))
 	})
 	UnauthorizedTest(t, "GET", "/linked_accounts/", nil)
 }
@@ -93,27 +93,27 @@ func TestDeleteLinkedAccount(t *testing.T) {
 	api, dbCleanup := GetAPIWithDBCleanup()
 	defer dbCleanup()
 	t.Run("MalformattedAccountID", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		ServeRequest(t, authToken, "DELETE", "/linked_accounts/123/", nil, http.StatusNotFound, api)
 	})
 	t.Run("InvalidAccountID", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		ServeRequest(t, authToken, "DELETE", "/linked_accounts/"+primitive.NewObjectID().Hex()+"/", nil, http.StatusNotFound, api)
 	})
 	t.Run("NotUnlinkableAccount", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
 		googleAccountID := getGoogleTokenFromAuthToken(t, api.DB, authToken).ID
 		body := ServeRequest(t, authToken, "DELETE", "/linked_accounts/"+googleAccountID.Hex()+"/", nil, http.StatusBadRequest, api)
 		assert.Equal(t, "{\"detail\":\"account is not unlinkable\"}", string(body))
 	})
 	t.Run("AccountDifferentUser", func(t *testing.T) {
-		authToken := login("approved@generaltask.com", "")
-		authTokenOther := login("other@generaltask.com", "")
+		authToken := login("approved@resonant-kelpie-404a42.netlify.app", "")
+		authTokenOther := login("other@resonant-kelpie-404a42.netlify.app", "")
 		googleAccountID := getGoogleTokenFromAuthToken(t, api.DB, authTokenOther).ID
 		ServeRequest(t, authToken, "DELETE", "/linked_accounts/"+googleAccountID.Hex()+"/", nil, http.StatusNotFound, api)
 	})
 	t.Run("Success", func(t *testing.T) {
-		authToken := login("deletelinkedaccount@generaltask.com", "")
+		authToken := login("deletelinkedaccount@resonant-kelpie-404a42.netlify.app", "")
 		linearTokenID := insertLinearToken(t, api.DB, authToken, false)
 		ServeRequest(t, authToken, "DELETE", "/linked_accounts/"+linearTokenID.Hex()+"/", nil, http.StatusOK, api)
 		var token database.ExternalAPIToken
@@ -125,7 +125,7 @@ func TestDeleteLinkedAccount(t *testing.T) {
 		assert.Error(t, err)
 	})
 	t.Run("SuccessGithub", func(t *testing.T) {
-		authToken := login("deletelinkedaccount_github@generaltask.com", "")
+		authToken := login("deletelinkedaccount_github@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 		accountID := "correctAccountID"
 		// should delete cached repos matching the account ID upon github unlink
@@ -185,7 +185,7 @@ func TestDeleteLinkedAccount(t *testing.T) {
 		assert.NoError(t, err)
 	})
 	t.Run("SuccessGoogle", func(t *testing.T) {
-		authToken := login("deletelinkedaccount_github@generaltask.com", "")
+		authToken := login("deletelinkedaccount_github@resonant-kelpie-404a42.netlify.app", "")
 		userID := getUserIDFromAuthToken(t, api.DB, authToken)
 		notUserID := primitive.NewObjectID()
 		accountID := "correctAccountID"

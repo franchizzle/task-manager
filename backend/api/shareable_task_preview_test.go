@@ -13,7 +13,7 @@ import (
 
 
 func TestShareableTaskPreview(t *testing.T) {
-	authToken := login("test_shareable_task_preview@generaltask.com", "")
+	authToken := login("test_shareable_task_preview@resonant-kelpie-404a42.netlify.app", "")
 	title1 := "domain shared"
 	title2 := "not shared"
 	title3 := "public shared"
