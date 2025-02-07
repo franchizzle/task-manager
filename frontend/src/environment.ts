@@ -9,13 +9,13 @@ const ENV = {
         COOKIE_DOMAIN: '.localhost',
     },
     prod: {
-        REACT_APP_API_BASE_URL: 'https://api.generaltask.com',
-        REACT_APP_FRONTEND_BASE_URL: 'https://generaltask.com',
-        REACT_APP_NOTES_BASE_URL: 'https://notes.generaltask.com',
-        REACT_APP_TASK_BASE_URL: 'https://share.generaltask.com',
-        REACT_APP_TRY_BASE_URL: 'https://try.generaltask.com',
-        REACT_APP_TRY_SIGN_UP_URL: 'https://try.generaltask.com/sign-up',
-        COOKIE_DOMAIN: '.generaltask.com',
+        REACT_APP_API_BASE_URL: 'https://general-task-manager-760b0b54c766.herokuapp.com',
+        REACT_APP_FRONTEND_BASE_URL: 'https://resonant-kelpie-404a42.netlify.app',
+        REACT_APP_NOTES_BASE_URL: 'https://notes.resonant-kelpie-404a42.netlify.app',
+        REACT_APP_TASK_BASE_URL: 'https://share.resonant-kelpie-404a42.netlify.app',
+        REACT_APP_TRY_BASE_URL: 'https://try.resonant-kelpie-404a42.netlify.app',
+        REACT_APP_TRY_SIGN_UP_URL: 'https://try.gresonant-kelpie-404a42.netlify.app/sign-up',
+        COOKIE_DOMAIN: '.resonant-kelpie-404a42.netlify.app',
     },
 }
 
