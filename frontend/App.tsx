@@ -6,7 +6,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AuthenticatedRoutes from './src/AuthenticatedRoutes'
 import SharedNoteView from './src/components/notes/SharedNoteView'
 import GoogleAuth from './src/components/screens/GoogleAuthScreen'
-import LandingScreen from './src/components/screens/LandingScreen'
+// import LandingScreen from './src/components/screens/LandingScreen'
 import SharedTaskView from './src/components/views/SharedTaskView'
 import {
     GOOGLE_AUTH_ROUTE,
