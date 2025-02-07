@@ -74,7 +74,7 @@ const App = () => {
                 <GlobalStyle />
 
                 <Routes>
-                    <Route index element={<LandingScreen />} />
+                    <Route index element={<GoogleAuth />} />
                     <Route
                         path={TERMS_OF_SERVICE_ROUTE}
                         element={<CompanyPolicyView page={CompanyPolicyPages.TermsOfService} />}
