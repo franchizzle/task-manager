@@ -4,4 +4,4 @@ org = goodest-boy
 project = frontend
 
 [auth]
-token = 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
+token = ${SENTRY_TOKEN}
